@@ -1,0 +1,16 @@
+<script>
+    let x, y    
+    x = parseFloat(prompt("Informe um valor "))
+    if(x < -4 || x > 4) {
+        y = calcular(x)
+        document.write("<h3>y = " + y.toFixed(3) + "</h3>")
+    }
+    else {
+        document.write("<h3>Valor informado é inválido</h3>")
+    }
+
+    function calcular(x) {
+        let y = (5 * x + 3) / Math.sqrt(x * x - 16)
+        return y
+    }
+</script>

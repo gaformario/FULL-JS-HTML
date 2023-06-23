@@ -1,0 +1,65 @@
+<script>
+    let linhaA = parseInt(prompt("Total linhas da matriz A: "))
+    let colunaA = parseInt(prompt("Total colunas da matriz A: "))
+    let linhaB = colunaA // pra multiplicar, obrigatoriamente linha de B = coluna de A
+    let colunaB = parseInt(prompt("Total colunas da matriz B: "))
+
+    let matrizA = new Array(linhaA);
+    let matrizB = new Array(linhaB);
+    let matrizC = new Array(linhaA)
+
+    preencherA(matrizA)
+    preencherB(matrizB)
+
+    imprimir(matrizA)
+    imprimir(matrizB)
+
+    multiplicar(matrizA,matrizB,matrizC)
+
+    imprimir(matrizC)
+    
+    function preencherA(matrizA) {
+        for(let i = 0; i < matrizA.length; i++) {
+            matrizA[i] = new Array(colunaA)
+            for(let j = 0; j < matrizA[i].length; j++) {
+                matrizA[i][j] = Math.floor(Math.random() * 4)
+
+            }
+        
+        }
+
+        }
+
+    function preencherB(matrizB) {
+        for(let i = 0; i < matrizB.length; i++) {
+            matrizB[i] = new Array(colunaB)
+            for(let j = 0; j < matrizB[i].length; j++) {
+                matrizB[i][j] = Math.floor(Math.random() * 4)
+
+            }
+        }
+    }
+    
+    function imprimir(matriz) {
+        console.table(matriz)
+
+    }
+
+    function multiplicar(matrizA,matrizB,matrizC) {
+        for(i = 0; i < linhaA; i++) {
+            matrizC[i] = new Array(colunaB)
+            for(k = 0; k < colunaB; k++) {
+                soma = 0
+                for(j = 0; j < colunaA; j++) {
+                    soma += matrizA[i][j] * matrizB[j][k]
+
+                }
+                matrizC[i][k] = soma
+            }
+        }
+        
+
+    }
+
+
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  	<title>Atividade 2 - Ex2</title>
+</head>
+<body>
+  <h1>Descriptografia</h1>
+  <form>
+    <label for="texto">Texto:</label>
+    <input type="text" id="texto"><br>
+    <label for="deslocamento">Deslocamento:</label>
+    <input type="number" id="deslocamento"><br>
+    <button type="button" onclick="descriptografar()">Descriptografar</button>
+  </form>
+
+  <h2>Texto descriptografado:</h2>
+  <p id="resultado"></p>
+
+  <script>
+    function descriptografar() {
+
+      let texto = document.getElementById("texto").value;
+      let deslocamento = document.getElementById("deslocamento").value
+
+      let alfabeto = "abcdefghijklmnopqrstuvwxyz".split("")
+
+      let letrasCriptografadas = []
+
+      for (let i = 0; i < texto.length; i++) {
+        let letra = texto[i]
+
+        let letraEncontrada = false
+        for (let j = 0; j < alfabeto.length; j++) {
+          if (alfabeto[j] === letra.toLowerCase()) {
+            letraEncontrada = true
+            let numero = j
+            let novoNumero = (numero - Number(deslocamento) - 1) % 26
+            let novaLetra = alfabeto[novoNumero]
+            if (letra === letra.toUpperCase()) {
+              letrasCriptografadas.push(novaLetra.toUpperCase());
+            } else {
+              letrasCriptografadas.push(novaLetra)
+            }
+            break
+          }
+        }
+
+        if (!letraEncontrada) {
+          letrasCriptografadas.push(letra)
+        }
+      }
+
+      let resultado = letrasCriptografadas.join("")
+
+      document.getElementById("resultado").innerHTML = resultado
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<meta charset="UTF-8"/>
+<script>
+    let aux = "Hoje é segunda-feira"
+
+    aux = aux.toLocaleLowerCase()
+    alert(aux)
+    aux = aux.toUpperCase()
+    alert(aux)
+
+    for(let i = 0; i < aux.length; i++) {
+        console.log(aux.charAt(i))
+    }
+
+    console.log(" ''''''''''''''''''''''''' ")
+    let palavra = aux.split(" ")
+    alert(palavra)
+    for(let i = 0; i < palavra.length; i++) {
+        for(j = 0; j < palavra[i].length; j++) {
+            console.log(palavra[i][j])
+        }
+    }
+
+</script>

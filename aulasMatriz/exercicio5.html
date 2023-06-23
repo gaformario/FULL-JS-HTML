@@ -1,0 +1,43 @@
+<script>
+    let tamanho = parseInt(prompt("Ordem da matriz: "))
+    let matriz = new Array(tamanho);
+
+    preencher(matriz)
+    console.log("Matriz original")
+    imprimir(matriz)
+    trocar(matriz)
+    console.log("Matriz diagonais trocadas")
+    imprimir(matriz)
+
+    function preencher(matriz) {
+        for(let i = 0; i < matriz.length; i++) {
+            matriz[i] = new Array(tamanho)
+            for(let j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = Math.floor(Math.random() * 10)
+
+            }
+        
+        }
+
+    }
+
+    function imprimir(matriz) {
+        console.table(matriz)
+
+            }
+
+    function trocar(matriz) {
+        let aux
+        let j = matriz.length - 1 // diagonal sec
+        for(let i = 0; i < matriz.length; i++, j--) {
+            aux = matriz[i][i] // diagonal princ virando aux
+            matriz[i][i] = matriz[i][j] // diag princ recebendo a sec
+            matriz[i][j] = aux // diag sec recebendo a aux
+
+
+        }
+    }
+
+
+
+</script>

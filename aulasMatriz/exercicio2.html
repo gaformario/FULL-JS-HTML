@@ -1,0 +1,33 @@
+<script>
+let matriz = new Array(3);
+for(let i = 0; i < matriz.length; i++) {
+    matriz[i] = new Array(3)
+    for(let j = 0; j < matriz[i].length; j++) {
+        matriz[i][j] = Math.floor(Math.random() * 20)
+    }
+
+}
+
+let aux = 0
+let pos = [0,0]
+let posicoes = [[0,0]]
+for(let i = 0; i < matriz.length; i++) {
+    for(let j = 0; j < matriz[i].length; j++) {
+            if (matriz[i][j] > aux) {
+                aux = matriz[i][j]
+                pos = [i,j]
+                posicoes = [[i, j]]
+            } 
+            else if (matriz[i][j] === aux) {
+                posicoes.push([i, j])
+            }
+        }
+    }
+
+console.table(matriz)
+console.log(aux) 
+console.log("Linha e coluna do maior: " + pos)
+console.log("Linha e coluna repetidas: " + posicoes)
+
+    
+</script>

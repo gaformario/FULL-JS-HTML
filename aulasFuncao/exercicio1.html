@@ -1,0 +1,18 @@
+<script>
+    let valor = Number(prompt("Digite um valor inteiro"))
+    if(valor > 0) {
+        divisor(valor)
+    }
+    else {
+        alert("O valor deve ser positivo")
+    }
+
+    // código da função divisor
+    function divisor(valor) {
+        for(let i = 1; i <= valor; i++) {
+            if(valor % i == 0) {
+                console.log(i)
+            }
+        }
+    }
+</script>

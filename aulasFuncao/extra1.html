@@ -1,0 +1,49 @@
+<script>
+    let lista = []
+    let maior
+
+    // armazena os valores na lista
+    armazenar(lista)
+
+    // localiza o maior valor da lista
+    maior = localizarMaior(lista)
+
+    // imprime os valores da lista
+    imprimir(lista)
+
+    // imprime a tabuada do maior valor
+    imprimirTabuada(maior)
+
+    function armazenar(lista) {
+        for(let i = 0; i < 10; i++) {
+            lista[i] = parseInt(Math.random() * 20)
+        }
+    }
+
+    function imprimir(lista) {
+        document.write("<h2>Valores armazenados na lista<h2>")
+        for(let i = 0; i < lista.length; i++) {
+            document.write("<h4>" + lista[i] + "<h4>")
+        }
+    }
+
+    function localizarMaior(lista) {
+        let aux = lista[0]
+        for(let i = 1; i < lista.length; i++) {
+            if(lista[i] > aux) {
+                aux = lista[i]
+            }
+        }
+        return aux
+    }
+
+    function imprimirTabuada(maior) {
+        document.write("<br><h2>Tabuada do " + maior + "<h2>")
+        let resultado
+
+        for(let i = 0; i <= 10; i++) {
+            resultado = maior * i
+            document.write("<h4>" + maior + " * " + i + " = " + resultado + "<h4>")
+        }
+    }
+</script>

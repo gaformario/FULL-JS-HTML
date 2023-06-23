@@ -1,0 +1,37 @@
+<script>
+    let lista = new Array(10)
+
+    preencher(lista) // lista --> argumento
+    document.write("<h1>Antes da ordenação</h1>")
+    imprimir(lista)
+    ordenar(lista)
+    document.write("<h1>Depois da ordenação</h1>")
+    imprimir(lista)
+
+    function ordenar(lista) {
+        let aux
+
+        for(let j = 0; j < lista.length; j++) {
+            for(let i = 0; i < lista.length; i++) {
+                if(lista[i] > lista[i + 1]) {
+                    aux = lista[i]
+                    lista[i] = lista[i + 1]
+                    lista[i + 1] = aux
+                }
+            }
+        }
+    }
+
+    function preencher(lista) { // lista --> parâmetro
+        for(let i = 0; i < lista.length; i++) {
+            lista[i] = Math.random() * 50
+        }
+    }
+
+    function imprimir(lista) {
+        //console.log(lista)
+        for(let i = 0; i < lista.length; i++) {
+            document.write(lista[i] + "<br>")
+        }
+    }
+</script>

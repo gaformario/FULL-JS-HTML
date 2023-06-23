@@ -1,0 +1,22 @@
+<script>
+
+    let valor1 = Number(prompt("Valor 1: "))
+    let valor2 = Number(prompt("Valor 2: "))
+    let valor3 = Number(prompt("Valor 3: "))
+
+    console.log("o maior valor é: " + maior(valor1, valor2, valor3))
+
+    // função para determinar o maior dos três valores
+    function maior(x, y, z) {
+        if(x > y && x > z) {
+            return x
+        }
+        else if(y > z) {
+            return y
+        }
+        else {
+            return z
+        }
+    }
+
+</script>

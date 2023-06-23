@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conversor de Temperatura</title>
+    <meta charset="utf-8">
+    <script>
+      function converter() {
+  
+        let temperatura = document.getElementById("temperatura").value;
+        let escala = document.getElementById("celsiusToFahrenheit").checked
+
+        let resultado;
+        if (escala === true) {
+          resultado = (temperatura * 9/5) + 32;
+        } else {
+          resultado = (temperatura - 32) * 5/9;
+        }
+
+
+        document.getElementById("resultado").value = resultado.toFixed(2);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Conversor de Temperatura</h1>
+    <form>
+      <label>Temperatura:</label>
+      <input type="number" id="temperatura" name="temperatura" required>
+      <br>
+      <input type="radio" id="celsiusToFahrenheit" name="escala" value="celsiusToFahrenheit" checked>
+      <label>Celsius para Fahrenheit</label>
+      <br>
+      <input type="radio" id="fahrenheitToCelsius" name="escala" value="fahrenheitToCelsius">
+      <label>Fahrenheit para Celsius</label>
+      <br>
+      <button type="button" onclick="converter()">Converter</button>
+      <br>
+      <label>Resultado:</label>
+      <input type="number" id="resultado" name="resultado" readonly>
+    </form>
+  </body>
+</html>

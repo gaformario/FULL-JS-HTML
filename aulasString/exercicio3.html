@@ -1,0 +1,17 @@
+<script>
+    
+
+    let data = prompt("Digite a sua data de nascimento (dd/mm/aaaa):")
+    let partesData = data.split('/')
+
+    let dia = partesData[0]
+    let mes = partesData[1]
+    let ano = partesData[2]
+
+    let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+    let mesExtenso = meses[mes - 1]
+
+    console.log(mesExtenso)
+    console.log('Você nasceu em ' + dia + ' de ' + mesExtenso + ' de ' + ano)
+
+</script>

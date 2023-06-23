@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atividade 1</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+
+    let num_salas = parseInt(prompt("Informe o número de salas de aula:"));
+
+    let notas = preencher(num_salas)
+
+    exibir(notas)
+
+
+
+    function preencher(num_salas) {
+            let notas = new Array(num_salas)
+
+            for (let i = 0; i < num_salas; i++) {
+                let num_alunos = parseInt(prompt('Sala ' + (i+1) + ': Informe o número de alunos:'));
+
+                notas[i] = new Array(num_alunos)
+
+                for (let j = 0; j < num_alunos; j++) {
+                    notas[i][j] = parseInt(prompt('Aluno ' + (j+1) + ': Informe a média final:'));
+
+                }
+            }
+
+            return notas;
+    }
+    function porcentagemAcimaMedia(notas_sala) {
+        let soma_notas = 0
+
+        for (let j = 0; j < notas_sala.length; j++) {
+            soma_notas += notas_sala[j]
+        }
+
+        let media_sala = soma_notas / notas_sala.length;
+        let acima_media = 0
+
+        for (let j = 0; j < notas_sala.length; j++) {
+            if (notas_sala[j] > media_sala) {
+            acima_media++
+            }
+        }
+
+        return acima_media / notas_sala.length * 100;
+    }
+
+    function exibir(notas) {
+        for (let i = 0; i < notas.length; i++) {
+            let notas_sala = notas[i]
+            let perc_acima_media = porcentagemAcimaMedia(notas_sala)
+            console.log('Sala ' + (i+1) + ': ' + perc_acima_media.toFixed(3) + '% dos alunos estão acima da média.')
+
+        }
+    }
+
+    </script>
+  </body>
+</html>
